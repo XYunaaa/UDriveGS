@@ -45,8 +45,8 @@
 
 - [x] Write Chinese README and migration instructions with exact setup, restore, preflight, RGB queue and optional full/depth requirements.
 - [x] Run CPU suite, shell syntax checks, clean-clone checks, Git ignore/size audit and an independent review.
-- [ ] Initialize/fetch the empty remote in this folder (no existing Git history/worktree to isolate), commit only reviewed small files and push without forcing when existing authentication permits.
-- [ ] Verify remote commit; otherwise leave the exact ready-to-push commit and report the authentication blocker.
+- [x] Initialize/fetch the empty remote in this folder (no existing Git history/worktree to isolate), commit only reviewed small files and push without forcing when existing authentication permits.
+- [x] Verify remote commit; otherwise leave the exact ready-to-push commit and report the authentication blocker.
 
 ## Execution ledger
 
@@ -59,3 +59,5 @@
 - Ruling: use repository-local XYunaaa GitHub noreply identity matching the authenticated SSH account; do not inherit the shared machine global author identity.
 
 - Final environment audit: final whole-suite rerun reported40tests /1importerror in test_scene2_depth (TorchInductor/hipify Tokenizer TypeError), despite earlier47-test pass. Exact final output saved in metadata/environment/latest-cpu-suite.txt. Ruling: preserve/disclose both results, do not retry until green or claim healthy GPU/CPU environment; deliver requested code/data handoff, with destination fresh-environment preflight mandatory. No new production code defect was identified.
+
+- Publication: initial code commit d1ae243a58fc04b8a1353b20b79772857caecdfd pushed to XYunaaa/UDriveGS main via authenticated SSH. Focused7 handoff tests passed after the credential fix. Source data and outputs remained ignored; no training started. Final follow-up commit only updates this ledger and verification metadata.

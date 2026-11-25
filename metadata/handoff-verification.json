@@ -1,5 +1,5 @@
 {
-  "status": "ready_to_push_with_documented_environment_instability",
+  "status": "handoff_prepared_with_documented_environment_instability",
   "training_started": false,
   "cpu_suite": {
     "command": "PYTHONNOUSERSITE=1 PYTHONPATH=project/code TORCHINDUCTOR_COMPILE_THREADS=1 .envs/splatfacto/bin/python -m unittest discover -s code -p test_*.py",
@@ -26,5 +26,11 @@
   "gpu_training_tested": false,
   "fresh_environment_install_tested": false,
   "independent_review": "Ship after forced credential file regression fix",
-  "repository_policy": "5MiB per blob including history,20MiB staged snapshot; exclude data/results/environments/third-party/media/weights"
+  "repository_policy": "5MiB per blob including history,20MiB staged snapshot; exclude data/results/environments/third-party/media/weights",
+  "repository": {
+    "url": "https://github.com/XYunaaa/UDriveGS",
+    "branch": "main",
+    "code_commit": "d1ae243a58fc04b8a1353b20b79772857caecdfd"
+  },
+  "focused_handoff_tests_passed": 7
 }
