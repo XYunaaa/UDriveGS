@@ -1,0 +1,18 @@
+{
+  "torch": "2.4.0+cu124",
+  "torchvision": "0.19.0+cu124",
+  "nerfstudio": "1.1.5",
+  "gsplat": "1.4.0",
+  "numpy": "1.26.4",
+  "tyro": "0.8.14",
+  "torchmetrics": "1.4.3",
+  "setuptools": "80.10.2",
+  "opencv-python-headless": "4.10.0.84",
+  "packaging": "26.3",
+  "python": "Python 3.10.22",
+  "platform": "Linux x86_64",
+  "gpu_tested": "NVIDIA GeForce RTX4090D24GB",
+  "driver_tested": "550.120",
+  "cuda_toolkit_tested": "12.4",
+  "colmap_tested": "3.9.1"
+}

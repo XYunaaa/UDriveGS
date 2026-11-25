@@ -1,0 +1,8 @@
+numpy==1.26.4
+torch==2.4.0
+torchvision==0.19.0
+nerfstudio==1.1.5
+gsplat==1.4.0
+tyro==0.8.14
+torchmetrics==1.4.3
+setuptools<81

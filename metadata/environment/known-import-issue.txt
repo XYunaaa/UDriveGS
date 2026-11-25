@@ -1,0 +1,32 @@
+Observed on the original machine, not a completed training result.
+
+1. First pose queue attempt stopped in `import torch`, before creating a run directory.
+   Standard-library posixpath.join raised:
+   TypeError: startswith first arg must be str or a tuple of str, not NoneType
+
+2. During this handoff, the parent process confirmed fully loaded portable and
+   original TrainerConfig objects compare equal, but an automatically spawned
+   TorchInductor compile worker failed during torch import in sre_parse.py:
+   TypeError: 'in <string>' requires string as left operand, not Tokenizer
+   SubprocPool unclean exit
+
+3. An independent review's CPU suite (without TORCHINDUCTOR_COMPILE_THREADS=1)
+   had 45 passing tests and one import error in test_export_camera_paths:
+   scipy._lib.array_api_compat._internal.inner -> inspect.Signature.replace ->
+   Signature.__init__ raised TypeError comparing Signature and _ParameterKind.
+   Separately, the updated full47-test suite passed with
+   TORCHINDUCTOR_COMPILE_THREADS=1. This does not prove that variable fixes the
+   underlying problem.
+
+The CPU test suite passed separately. Root cause is unresolved; successful CPU
+tests or parent exit code 0 do not establish whole-environment health. No blind
+dependency updates or standard-library patches were made. The destination machine
+must create its own environment and pass CUDA forward/backward checks before 30k
+training. Do not copy the old environment or compiled extension cache.
+
+4. Final CPU-suite rerun also failed with compile threads1: reported40 tests,
+   one import error in test_scene2_depth while importing TorchInductor hipify
+   regular-expression preprocessing (Tokenizer TypeError). Full normalized output
+   is latest-cpu-suite.txt. No further retries were used to mask this failure.
+   The7 focused handoff tests/guard regression and prior47-test pass are separate
+   evidence; final whole-suite status is NOT green.

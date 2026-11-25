@@ -1,0 +1,30 @@
+{
+  "status": "ready_to_push_with_documented_environment_instability",
+  "training_started": false,
+  "cpu_suite": {
+    "command": "PYTHONNOUSERSITE=1 PYTHONPATH=project/code TORCHINDUCTOR_COMPILE_THREADS=1 .envs/splatfacto/bin/python -m unittest discover -s code -p test_*.py",
+    "independent_failure": "Separate run had45passed/1importerror in test_export_camera_paths via SciPy/inspect; environment not declared healthy",
+    "previous_complete_run_tests_passed": 47,
+    "latest_run": {
+      "reported_tests": 40,
+      "errors": 1,
+      "failed_module": "test_scene2_depth",
+      "failure": "Import-time TorchInductor/hipify regular-expression Tokenizer TypeError; same pre-existing instability; even with compile threads1",
+      "log": "metadata/environment/latest-cpu-suite.txt"
+    }
+  },
+  "transfer": {
+    "files": 551,
+    "raw_bytes": 1065825855,
+    "parts": 2,
+    "part_size_limit_bytes": 536870912,
+    "part_and_each_file_sha256_verified": true,
+    "restored_alternate_absolute_checkout": true,
+    "rgb_input_preflight": "474train/41val/30test; training_started false"
+  },
+  "portable_config_equals_original_native_config": true,
+  "gpu_training_tested": false,
+  "fresh_environment_install_tested": false,
+  "independent_review": "Ship after forced credential file regression fix",
+  "repository_policy": "5MiB per blob including history,20MiB staged snapshot; exclude data/results/environments/third-party/media/weights"
+}

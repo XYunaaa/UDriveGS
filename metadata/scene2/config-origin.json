@@ -1,0 +1,6 @@
+{
+  "source_config_sha256": "62efc4a226a2d2110994f3a078ccebe029bbb060833f20dcf18e14a1982c4729",
+  "portable_config_sha256": "9d8b83df34059d2ce2561c8ef12d20fa30d1be5f1e9d40ce23780a6cbc99b190",
+  "changes": "Only project-prefix Path nodes made relative; all numerical model/training settings retained",
+  "captured_utc": "2026-11-25T05:36:37.705493+00:00"
+}

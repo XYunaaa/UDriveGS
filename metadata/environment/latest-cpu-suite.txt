@@ -1,0 +1,87 @@
+...............Extracted IMG_9763.MOV: 4 train frames
+Extracted IMG_9765.MOV: 4 val frames
+Extracted IMG_9780.MOV: 4 test frames
+..............Extracted IMG_9763.MOV: 4 train frames
+Extracted IMG_9765.MOV: 4 val frames
+Extracted IMG_9780.MOV: 4 test frames
+Extracted IMG_9763.MOV: 8 train frames
+Preserved frozen val frames: IMG_9765.MOV
+Preserved frozen test frames: IMG_9780.MOV
+.EWaiting for GPU memory: train_pose, need12GiB, free7.00GiB; other jobs left running
+...<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/nerfstudio/field_components/activations.py:32: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  @custom_fwd(cast_inputs=torch.float32)
+<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/nerfstudio/field_components/activations.py:39: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, g):
+......
+======================================================================
+ERROR: test_scene2_depth (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_scene2_depth
+Traceback (most recent call last):
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "<PROJECT>/code/test_scene2_depth.py", line 13, in <module>
+    from scene2_depth import (CalibratedDepthModel, CalibratedDepthConfig,
+  File "<PROJECT>/code/scene2_depth.py", line 24, in <module>
+    from nerfstudio.models.splatfacto import SplatfactoModel, SplatfactoModelConfig
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/nerfstudio/models/splatfacto.py", line 128, in <module>
+    def get_viewmat(optimized_camera_to_world):
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/__init__.py", line 2097, in fn
+    return compile(model,
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/__init__.py", line 2111, in compile
+    backend = _TorchCompileInductorWrapper(mode, options, dynamic)
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/__init__.py", line 1901, in __init__
+    from torch._inductor.compile_fx import compile_fx
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 63, in <module>
+    from .fx_passes.joint_graph import joint_graph_passes
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/fx_passes/joint_graph.py", line 15, in <module>
+    from ..pattern_matcher import (
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/pattern_matcher.py", line 95, in <module>
+    from .lowering import fallback_node_due_to_unsupported_type
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/lowering.py", line 6090, in <module>
+    from . import kernel
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/kernel/__init__.py", line 1, in <module>
+    from . import mm, mm_common, mm_plus_mm, unpack_mixed_mm
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/kernel/mm.py", line 7, in <module>
+    from torch._inductor.codegen.cpp_gemm_template import CppPackedGemmTemplate
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/codegen/cpp_gemm_template.py", line 8, in <module>
+    from ..kernel.mm_common import mm_args
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/kernel/mm_common.py", line 10, in <module>
+    from torch._inductor.select_algorithm import realize_inputs
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/select_algorithm.py", line 44, in <module>
+    from .codegen.wrapper import pexpr
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/codegen/wrapper.py", line 49, in <module>
+    from .aoti_hipify_utils import maybe_hipify_code_wrapper
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/_inductor/codegen/aoti_hipify_utils.py", line 4, in <module>
+    from torch.utils.hipify.hipify_python import PYTORCH_MAP, RE_PYTORCH_PREPROCESSOR
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/site-packages/torch/utils/hipify/hipify_python.py", line 787, in <module>
+    RE_PYTORCH_PREPROCESSOR = re.compile(fr'(?<=\W)({PYTORCH_TRIE.export_to_regex()})(?=\W)')
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/re.py", line 251, in compile
+    return _compile(pattern, flags)
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/re.py", line 303, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/sre_compile.py", line 788, in compile
+    p = sre_parse.parse(p, flags)
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/sre_parse.py", line 955, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/sre_parse.py", line 444, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/sre_parse.py", line 841, in _parse
+    p = _parse_sub(source, state, sub_verbose, nested + 1)
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/sre_parse.py", line 444, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/sre_parse.py", line 841, in _parse
+    p = _parse_sub(source, state, sub_verbose, nested + 1)
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/sre_parse.py", line 444, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+  File "<PROJECT>/.envs/splatfacto/lib/python3.10/sre_parse.py", line 510, in _parse
+    if this in "|)":
+TypeError: 'in <string>' requires string as left operand, not Tokenizer
+
+
+----------------------------------------------------------------------
+Ran 40 tests in 4.456s
+
+FAILED (errors=1)
